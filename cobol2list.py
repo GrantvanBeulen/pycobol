@@ -1,13 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 __version__ = """COBOL Fixed-length Data Parser ver 0.2
-<<<<<<< HEAD
 Note: This version does not work with OCCURS in Copybook files,
 but is a lot faster than the varaible length data parser modules.
-=======
-Note: This version does not work with OCCURS in Copybook files.
-This version is faster than the varaible length data parsers.
->>>>>>> af88df1847b4a11eb1c78ebb4c147fc45e11775f
 
 License: GPLv3, Copyright (C) 2010 Brian Peterson
 This is free software.  There is NO warranty; 
@@ -18,13 +13,6 @@ USAGE = """copybook2list.py CopybookFile"""
 import load
 import csv, struct, sys
 
-<<<<<<< HEAD
-=======
-def display_records(data):
-    for record in data:
-        print ','.join(record)
-        
->>>>>>> af88df1847b4a11eb1c78ebb4c147fc45e11775f
 def parse_data(struct_fmt, lines):
     try:
       return [ struct.unpack(struct_fmt, i) for i in lines ]
@@ -41,12 +29,8 @@ def main(args):
     if args.struct:
         print struct_fmt
     else:
-<<<<<<< HEAD
         for record in parse_data(struct_fmt, load.lines(args.datafile)):
             print record
-=======
-        display_records(parse_data(struct_fmt, load.lines(args.datafile)))
->>>>>>> af88df1847b4a11eb1c78ebb4c147fc45e11775f
 
 if __name__ == '__main__':
     from cmd_line_args import Args
